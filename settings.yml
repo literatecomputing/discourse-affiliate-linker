@@ -1,2 +1,4 @@
-example_setting:
-  default: true
+affilliate_link_map:
+  default: "digitalocean.com,https://m.do.co/c/a5bf212d9a92"
+  type: "list"
+  description: "hostname,referal link"
