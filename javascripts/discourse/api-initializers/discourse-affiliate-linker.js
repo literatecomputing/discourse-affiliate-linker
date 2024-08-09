@@ -10,7 +10,7 @@ export function decorateInlineLink(element) {
     const href = container.href;
 
     let linkMap = settings.affiliate_link_map;
-    if (linkMap,split(",") === "example.com") {
+    if (linkMap.split(",") === "example.com") {
       console.error("Please configure the affiliate_link_map setting. Affilliate_link_map is deprecated");
       linkMap = settings.affilliate_link_map;
     }
