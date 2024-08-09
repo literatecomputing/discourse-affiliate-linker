@@ -11,8 +11,6 @@ export function decorateInlineLink(element) {
 
     let linkMaps = settings.affiliate_link_map;
 
-    console.log("first affiliate", linkMaps.split(",")[0]);
-
     if (linkMaps.split(",")[0] === "example.com") {
       // eslint-disable-next-line no-console
       console.error(
