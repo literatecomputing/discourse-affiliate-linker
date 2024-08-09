@@ -9,15 +9,22 @@ export function decorateInlineLink(element) {
   containers.forEach((container) => {
     const href = container.href;
 
-    let linkMap = settings.affiliate_link_map;
-    if (linkMap.split(",")[0] === "example.com") {
-      console.error("Please configure the affiliate_link_map setting. Affilliate_link_map is deprecated");
-      linkMap = settings.affilliate_link_map;
+    let linkMaps = settings.affiliate_link_map;
+
+    if (linkMaps.split(",")[0] === "example.com") {
+      // eslint-disable-next-line no-console
+      console.error(
+        "Please configure the affiliate_link_map setting. affiliate_link_map is deprecated"
+      );
+      // eslint-disable-next-line no-shadow
+      linkMaps = settings.affilliate_link_map; // No redeclaration, just reassignment
     }
-    linkMap.split("|").forEach((linkMap) => {
+
+    linkMaps.split("|").forEach((linkMap) => {
       const [hostname, link] = linkMap.split(",").map((item) => item.trim());
 
       if (!hostname || !link) {
+        // eslint-disable-next-line no-console
         console.error("Invalid affiliate link map entry:", linkMap);
         return;
       }
