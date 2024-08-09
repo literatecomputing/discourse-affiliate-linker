@@ -14,7 +14,7 @@ export function decorateInlineLink(element) {
       console.error("Please configure the affiliate_link_map setting. Affilliate_link_map is deprecated");
       linkMap = settings.affilliate_link_map;
     }
-    settings.affilliate_link_map.split("|").forEach((linkMap) => {
+    linkMap.split("|").forEach((linkMap) => {
       const [hostname, link] = linkMap.split(",").map((item) => item.trim());
 
       if (!hostname || !link) {
