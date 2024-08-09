@@ -9,9 +9,14 @@ export function decorateInlineLink(element) {
   containers.forEach((container) => {
     const href = container.href;
 
-    settings.affilliate_link_map.split("|").forEach((linkMap) => {
-      const hostname = linkMap.split(",")[0].trim();
-      const link = linkMap.split(",")[1].trim();
+    settings.affiliate_link_map.split("|").forEach((linkMap) => {
+      const [hostname, link] = linkMap.split(",").map(item => item.trim());
+
+      if (!hostname || !link) {
+        console.error("Invalid affiliate link map entry:", linkMap);
+        return;
+      }
+
       const escapedMapHostname = escapeRegex(hostname);
       const mapRegex = new RegExp(
         `^https?:\/\/(www\\.)?${escapedMapHostname}(\/?)?$`,

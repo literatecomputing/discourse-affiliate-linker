@@ -7,7 +7,7 @@ use your referral link for Digital Ocean or whatever other sites you wish.
 
 ## Configuration
 
-The theme setting `affilliate link map` takes a list of "HOSTNAME,referral_url" mappings and
+The theme setting `affiliate link map` takes a list of "HOSTNAME,referral_url" mappings and
 then replaces those links (`<div class='cooked'>`) with the referral link. This replacement happens
 in the browser, so there is no need to rebake posts after making changes.
 
