@@ -9,8 +9,13 @@ export function decorateInlineLink(element) {
   containers.forEach((container) => {
     const href = container.href;
 
+    let linkMap = settings.affiliate_link_map;
+    if (linkMap,split(",") === "example.com") {
+      console.error("Please configure the affiliate_link_map setting. Affilliate_link_map is deprecated");
+      linkMap = settings.affilliate_link_map;
+    }
     settings.affilliate_link_map.split("|").forEach((linkMap) => {
-      const [hostname, link] = linkMap.split(",").map(item => item.trim());
+      const [hostname, link] = linkMap.split(",").map((item) => item.trim());
 
       if (!hostname || !link) {
         console.error("Invalid affiliate link map entry:", linkMap);
