@@ -6,7 +6,7 @@ For example, you might want to replace links to digitalocean.com with my referra
 use your referral link for Digital Ocean or whatever other sites you wish.
 
 The theme setting `affilliate link map` takes a list of "HOSTNAME,referral_url" mappings and
-then replaces those links (<div class='cooked'>) with the referral link. This replacement happens
+then replaces those links (`<div class='cooked'>`) with the referral link. This replacement happens
 in the browser, so there is no need to rebake posts after making changes.
 
 This replaces _only_ links to the home page, so links to other pages on the site still function
