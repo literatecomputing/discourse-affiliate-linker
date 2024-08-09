@@ -9,7 +9,7 @@ export function decorateInlineLink(element) {
   containers.forEach((container) => {
     const href = container.href;
 
-    settings.affiliate_link_map.split("|").forEach((linkMap) => {
+    settings.affilliate_link_map.split("|").forEach((linkMap) => {
       const [hostname, link] = linkMap.split(",").map(item => item.trim());
 
       if (!hostname || !link) {
