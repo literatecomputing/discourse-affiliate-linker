@@ -16,7 +16,7 @@ export function decorateInlineLink(element) {
       console.error(
         "Please configure the affiliate_link_map setting. affiliate_link_map is deprecated"
       );
-      // eslint-disable-next-line no-shadow
+
       linkMaps = settings.affilliate_link_map; // No redeclaration, just reassignment
     }
 
@@ -41,7 +41,7 @@ export function decorateInlineLink(element) {
   });
 }
 
-export default apiInitializer("1.8.0", (api) => {
+export default apiInitializer((api) => {
   api.decorateCookedElement((element) => {
     decorateInlineLink(element);
   });
